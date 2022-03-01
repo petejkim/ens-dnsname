@@ -57,6 +57,8 @@ func Decode(encoded []byte) (string, error) {
 }
 
 func Encode(name string) ([]byte, error) {
+	name = strings.Trim(name, ".")
+
 	encoded := make([]byte, len(name)+2)
 	offset := 0
 
